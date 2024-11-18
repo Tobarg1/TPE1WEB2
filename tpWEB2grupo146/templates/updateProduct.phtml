@@ -1,0 +1,24 @@
+<form class="form" action="<?= BASE_URL ?>update-product/<?= $viaje->id_viaje ?>" method="POST">
+    <div>  
+        <label>Origen:</label><input required type="text" name="origen" value="<?= htmlspecialchars($viaje->origen) ?>">
+    </div>
+    <div>  
+        <label>Destino:</label><input required type="text" name="destino" value="<?= htmlspecialchars($viaje->destino) ?>">
+    </div>
+    <div>  
+        <label>Fecha:</label><input required type="date" name="fecha_viaje" value="<?= htmlspecialchars($viaje->fecha_viaje) ?>">
+    </div>
+    <div>  
+        <label>ID Colectivo:</label><input required type="number" name="id_colectivo" value="<?= htmlspecialchars($viaje->id_colectivo) ?>">
+    </div>
+    <div>  
+        <label>Tipo de Servicio:</label>
+        <select name="category_id" required>
+            <option value="1" <?= $viaje->category_id == 1 ? 'selected' : '' ?>>Económico</option>
+            <option value="2" <?= $viaje->category_id == 2 ? 'selected' : '' ?>>Ejecutivo</option>
+            <option value="3" <?= $viaje->category_id == 3 ? 'selected' : '' ?>>Premium</option>
+        </select>
+    </div>
+    <button type="submit">Actualizar Viaje</button>
+</form>
+<button><a href="<?= BASE_URL ?>products-list">Volver a la lista</a></button>

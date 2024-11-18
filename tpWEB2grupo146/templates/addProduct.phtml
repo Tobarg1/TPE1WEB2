@@ -1,0 +1,28 @@
+<?php require 'templates/header.phtml'; ?>
+
+<h3>Agregar Viaje</h3>
+<form class="form" action="<?= BASE_URL ?>add-product" method="POST">
+    <div>  
+        <label>Origen:</label><input required type="text" name="origen">
+    </div>
+    <div>  
+        <label>Destino:</label><input required type="text" name="destino">
+    </div>
+    <div>  
+        <label>Fecha:</label><input required type="date" name="fecha_viaje">
+    </div>
+    <div>  
+        <label>ID Colectivo:</label><input required type="number" name="id_colectivo">
+    </div>
+    <div>  
+        <label>Tipo de Servicio:</label>
+        <select name="category_id" required>
+            <option value="1">Económico</option>
+            <option value="2">Ejecutivo</option>
+            <option value="3">Premium</option>
+        </select>
+    </div>
+    <button type="submit">Añadir Viaje</button>
+</form>
+<button><a href="<?= BASE_URL ?>products-list">Ver lista de viajes</a></button>
+<button><a href="<?= BASE_URL ?>home">Volver al inicio</a></button>

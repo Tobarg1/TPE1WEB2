@@ -1,0 +1,24 @@
+<?php require_once 'templates/header.phtml'; ?>
+
+<nav>
+    <a href="<?=BASE_URL?>showLogin">Acceder como administrador</a>
+</nav>
+
+<?php if (isset($viaje) && $viaje): ?>
+    <h3>Detalle del viaje:</h3>
+    <ul>
+        <li>Origen: <?= htmlspecialchars($viaje->origen) ?></li>
+        <li>Destino: <?= htmlspecialchars($viaje->destino) ?></li>
+        <li>Fecha de salida: <?= htmlspecialchars($viaje->fecha_viaje) ?></li>
+        <li>ID del viaje: <?= htmlspecialchars($viaje->id_viaje) ?></li>
+        <li>ID del colectivo: <?= htmlspecialchars($viaje->id_colectivo) ?></li>
+    </ul>
+<?php else: ?>
+    <p>Error: No se encontró el viaje o el ID proporcionado es inválido.</p>
+<?php endif; ?>
+
+
+<button><a href="<?=BASE_URL?>products-list">Volver al listado</a></button>
+<button><a href="<?=BASE_URL?>home">Volver al inicio</a></button>
+
+<?php require 'templates/footer.phtml'; ?>

@@ -1,0 +1,17 @@
+<?php require_once "templates/header.phtml"; ?>
+
+<?php if ($error): ?>
+        <?= $error ?>
+<?php endif; ?>
+
+<form method="post" action="login">
+    <label for="user">User</label>
+    <input type="text" id="user" name="user" required>
+    
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    
+    <button type="submit">Login</button>
+</form>
+<button> <a href="<?=BASE_URL?>home">Volver al inicio</a></button>
+<?php require_once "templates/footer.phtml"; ?>

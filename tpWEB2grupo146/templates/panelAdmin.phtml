@@ -1,0 +1,27 @@
+<?php require 'templates/header.phtml'; ?>
+
+<h2>Panel del administrador</h2>
+
+
+<button><a href="<?=BASE_URL?>add-product"> Agregar Viaje </a></button>
+
+<div>
+        <ul>
+            <?php foreach($viajes as $viaje): ?>
+            <li> 
+                 <div>
+                     <h3>Origen:<?= $viaje->origen?>- Destino: <?= $viaje->destino?></h5>
+                     <div><button><a href="<?=BASE_URL?>product-details/<?= $viaje->id_viaje ?>">Ver detalles</a>
+                     <button><a href="<?= BASE_URL ?>delete-product/<?= $viaje->id_viaje ?>">Borrar Viaje</a></button>
+                     <button><a href="<?=BASE_URL?>update-product/<?= $viaje->id_viaje ?>"> Modificar Viaje </a></button>
+                </div>
+            </li>
+            <?php endforeach ?>
+        </ul>
+    </div>
+
+<button> <a href="<?=BASE_URL?>home">Volver al inicio</a></button>
+<?php if (isset($_SESSION['ID_USER'])): ?>
+    <button><a href="<?= BASE_URL ?>logout">Desloguearse</a></button>
+<?php endif; ?>
+<?php require 'templates/footer.phtml'; ?>

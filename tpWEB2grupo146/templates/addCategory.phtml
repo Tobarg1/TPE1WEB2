@@ -1,0 +1,12 @@
+<?php require 'templates/header.phtml'; ?>
+
+<h2>Agregar Categoría</h2>
+<form method="POST" action="<?= BASE_URL ?>add-category">
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" required>
+    <button type="submit">Agregar</button>
+</form>
+
+<button><a href="<?= BASE_URL ?>categories">Volver</a></button>
+
+<?php require 'templates/footer.phtml'; ?>

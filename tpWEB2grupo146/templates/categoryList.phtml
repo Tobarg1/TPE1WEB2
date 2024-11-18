@@ -1,0 +1,21 @@
+<?php require 'templates/header.phtml'; ?>
+
+<h2>Servicios de Viajes</h2>
+
+<?php if (!empty($categories)): ?>
+    <ul>
+        <?php foreach ($categories as $category): ?>
+            <li>
+                <a href="<?= BASE_URL ?>items-by-category/<?= $category->id ?>">
+                    <?= htmlspecialchars($category->name) ?>
+                </a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php else: ?>
+    <p>No hay categorías disponibles.</p>
+<?php endif; ?>
+
+<button><a href="<?= BASE_URL ?>home">Volver al inicio</a></button>
+
+<?php require 'templates/footer.phtml'; ?>

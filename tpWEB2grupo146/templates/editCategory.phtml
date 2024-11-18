@@ -1,0 +1,17 @@
+<?php require 'templates/header.phtml'; ?>
+
+<h2>Editar Categoría</h2>
+
+<?php if ($category): ?>
+    <form method="POST" action="<?= BASE_URL ?>edit-category/<?= $category->id ?>">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" value="<?= htmlspecialchars($category->name) ?>" required>
+        <button type="submit">Guardar</button>
+    </form>
+<?php else: ?>
+    <p>Error: No se encontró la categoría.</p>
+<?php endif; ?>
+
+<button><a href="<?= BASE_URL ?>categories">Volver</a></button>
+
+<?php require 'templates/footer.phtml'; ?>
